@@ -1,122 +1,305 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Welcome to Karpagam</title>
+  <meta charset="UTF-8">
+  <title>Karpagam Institute of Technology</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #0f172a, #2563eb);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
-        .card {
-            background: white;
-            color: #1f2937;
-            width: 600px;
-            padding: 40px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
+    body {
+      background: #f4f7fb;
+      color: #1f2937;
+    }
 
-        .logo {
-            width: 90px;
-            height: 90px;
-            background: #2563eb;
-            color: white;
-            margin: 0 auto 20px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 32px;
-            font-weight: bold;
-        }
+    /* Navbar */
+    .navbar {
+      background: white;
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
 
-        h1 {
-            margin: 10px 0;
-            color: #2563eb;
-            font-size: 36px;
-        }
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: #1d4ed8;
+    }
 
-        h2 {
-            margin: 10px 0;
-            color: #111827;
-            font-size: 24px;
-        }
+    .logo span {
+      color: #111827;
+    }
 
-        p {
-            font-size: 18px;
-            color: #4b5563;
-            line-height: 1.6;
-        }
+    .nav-links a {
+      text-decoration: none;
+      color: #374151;
+      margin-left: 25px;
+      font-size: 16px;
+      font-weight: 500;
+    }
 
-        .tagline {
-            background: #eff6ff;
-            color: #1d4ed8;
-            padding: 12px;
-            border-radius: 10px;
-            margin: 20px 0;
-            font-weight: bold;
-        }
+    .nav-links a:hover {
+      color: #2563eb;
+    }
 
-        .button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 28px;
-            background: #2563eb;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 16px;
-        }
+    /* Hero Section */
+    .hero {
+      min-height: 90vh;
+      background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(37, 99, 235, 0.75)),
+                  url("https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      padding: 0 8%;
+      color: white;
+    }
 
-        .button:hover {
-            background: #1d4ed8;
-        }
+    .hero-content {
+      max-width: 750px;
+    }
 
-        .footer {
-            margin-top: 25px;
-            font-size: 14px;
-            color: #6b7280;
-        }
-    </style>
+    .hero-content h1 {
+      font-size: 56px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero-content h1 span {
+      color: #bfdbfe;
+    }
+
+    .hero-content p {
+      font-size: 20px;
+      line-height: 1.7;
+      margin-bottom: 30px;
+      color: #e0f2fe;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      background: #ffffff;
+      color: #1d4ed8;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      margin-right: 15px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #dbeafe;
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: #1d4ed8;
+    }
+
+    /* About Section */
+    .section {
+      padding: 70px 8%;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 36px;
+      color: #1d4ed8;
+      margin-bottom: 15px;
+    }
+
+    .section p {
+      max-width: 850px;
+      margin: auto;
+      font-size: 18px;
+      color: #4b5563;
+      line-height: 1.7;
+    }
+
+    /* Cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin-top: 45px;
+    }
+
+    .card {
+      background: white;
+      padding: 35px 25px;
+      border-radius: 18px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card h3 {
+      color: #2563eb;
+      margin-bottom: 12px;
+      font-size: 24px;
+    }
+
+    .card p {
+      font-size: 16px;
+    }
+
+    /* Courses */
+    .courses {
+      background: #eff6ff;
+    }
+
+    /* Footer */
+    .footer {
+      background: #0f172a;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      font-size: 15px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-content h1 {
+        font-size: 40px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        text-align: center;
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <div class="card">
-        <div class="logo">KIT</div>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Karpagam <span>Institute</span></div>
 
-        <h1>Welcome to Karpagam</h1>
-        <h2>Karpagam Institute of Technology</h2>
-
-        <p>
-            We are happy to welcome you to Karpagam Institute of Technology.
-            A place to learn, build, innovate, and grow.
-        </p>
-
-        <div class="tagline">
-            Learn Today. Lead Tomorrow.
-        </div>
-
-        <p>
-            Explore knowledge, develop skills, and create your future with confidence.
-        </p>
-
-        <a href="#" class="button">Get Started</a>
-
-        <div class="footer">
-            © 2026 Karpagam Institute of Technology
-        </div>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Departments</a>
+      <a href="#">Admissions</a>
+      <a href="#">Contact</a>
     </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>
+        Welcome to <span>Karpagam Institute of Technology</span>
+      </h1>
+
+      <p>
+        Empowering students with quality education, innovation, technical skills,
+        and real-world learning to build a successful future.
+      </p>
+
+      <a href="#" class="btn">Apply Now</a>
+      <a href="#" class="btn btn-outline">Explore Campus</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section">
+    <h2>About Our College</h2>
+    <p>
+      Karpagam Institute of Technology is committed to creating skilled engineers,
+      innovators, and leaders. Our campus provides a strong academic environment,
+      modern facilities, practical learning, and opportunities for students to grow
+      in technology and leadership.
+    </p>
+  </section>
+
+  <!-- Highlights Section -->
+  <section class="section">
+    <h2>Why Choose Us?</h2>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Quality Education</h3>
+        <p>
+          Learn from experienced faculty with a strong focus on academic excellence
+          and practical knowledge.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Modern Campus</h3>
+        <p>
+          Experience smart classrooms, advanced labs, technical clubs, and a peaceful
+          learning environment.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Career Growth</h3>
+        <p>
+          Build industry-ready skills through projects, workshops, internships,
+          placements, and innovation programs.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Departments Section -->
+  <section class="section courses">
+    <h2>Our Departments</h2>
+
+    <div class="cards">
+      <div class="card">
+        <h3>CSE</h3>
+        <p>Computer Science and Engineering</p>
+      </div>
+
+      <div class="card">
+        <h3>ECE</h3>
+        <p>Electronics and Communication Engineering</p>
+      </div>
+
+      <div class="card">
+        <h3>AI & DS</h3>
+        <p>Artificial Intelligence and Data Science</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    © 2026 Karpagam Institute of Technology. All Rights Reserved.
+  </footer>
 
 </body>
 </html>
